@@ -10,10 +10,11 @@ Mô tả ngắn gọn về đồ án (Ví dụ: Mô phỏng mạng doanh nghiệ
 - `source/`: Mã nguồn chính của dự án (Python/Shell scripts).
 - `docs/`: Tài liệu hướng dẫn và báo cáo chi tiết.
 - `image/`: Sơ đồ thiết kế mạng và hình ảnh minh họa kết quả.
+- `report/`: Nơi để báo cáo và source latex (Nếu cần)
 - `test_commands.md`: Danh sách các lệnh dùng để kiểm tra và vận hành hệ thống.
 
 ## 🚀 Hướng dẫn cài đặt & Chạy
-1. **Yêu cầu hệ thống:** - Ubuntu/WSL2
+### 1. **Yêu cầu hệ thống:** - Ubuntu/WSL2
    - Mininet / Ryu Controller (hoặc công cụ bạn dùng)
    - Python 3.x
    - Chạy lệnh setup
@@ -25,13 +26,13 @@ Mô tả ngắn gọn về đồ án (Ví dụ: Mô phỏng mạng doanh nghiệ
    sudo bash source/setup/check_env.sh
    ```
    
-2. **Chạy mô phỏng:**
+### 2. **Chạy mô phỏng:**
    ```bash
    cd source
    sudo python3 <ten_file_chinh>.py
    ```
 
-3. Kiểm tra:
+### 3. Kiểm tra:
 Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
 
 ## 📊 Kết quả
@@ -42,7 +43,7 @@ Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
 > **LƯU Ý:** Bạn có thể xem file thiết kế gốc tại thư mục `image/` để chỉnh sửa bằng draw.io.
 > *PHẢI SỬA CHO ĐÚNG VỚI BÀI, DỰA TRÊN topology.py của riêng bạn nhé !*
 
-4. Nhiệm vụ tiếp theo để hoàn thành bài:
+### 4. Nhiệm vụ tiếp theo để hoàn thành bài:
 - [ ] Xem lại và tìm hiểu bức tranh tổng thể của bài
 - [ ] Hiểu về: Metro Ethernet MAN, MPLS, MPLS VPN (gồm có L2VPN VÀ L3VPN), VRF, BGP, MP BGP, OSPF,...
 - [ ] Hoàn thành tool.py đo 4 nội dung: Throughput, Delay, Packet loss, Jitter. Cần xuất được bảng, sơ đồ để thống kê (tham khảo [tool.py](./source/tool.py))
@@ -53,11 +54,11 @@ Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
     + tích hợp các chức năng in ra các file ảnh và file .csv như tool đã tham khảo.
 - [ ] Viết báo cáo Latex -- xem kỹ [đề bài](./docs/debai.txt) để thực hiện. Hãy chọn lọc các lệnh show / ... để chứng minh mình đã cấu hình được và screenshot bỏ vào báo cáo tăng độ tin cậy nhé !
 
-5. Sản phẩm cuối cùng (đề xuất): Tất cả zip lại đặt tên FINAL_MSSV_HOTEN.zip
-- /source: toàn bộ code liên quan, bao gồm: topology.py, config_backbone.py, config_branch1.py, config_branch2.py, config_branch3.py, tool.py, các folders giữ test_results từ tool.py,...
+### 5. Sản phẩm cuối cùng (đề xuất): Tất cả zip lại đặt tên FINAL_MSSV_HOTEN.zip
+- /source: toàn bộ code liên quan, bao gồm: topology.py, config_backbone.py, config_branch1.py, config_branch2.py, config_branch3.py, tool.py, các folders giữ test_results từ tool.py,... ***Lưu ý:*** Bám sát đề và đừng nộp những file không liên quan như **folder /setup** bạn nhé ! 
 - /report: Report.pdf, main.tex
 - /image: hình ảnh topology (draw.io) và hình ảnh liên quan (nếu có)
-***Lưu ý:*** đây chỉ là đề xuất, có thể bố trí bài nộp theo cách của riêng bạn.
+***Lưu ý:*** Đây chỉ là đề xuất, có thể bố trí bài nộp theo cách của riêng bạn.
 ---
 ### Thông tin tác giả
 * **Họ tên:** Lê Nguyễn Cát Tường
