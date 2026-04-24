@@ -1,0 +1,25 @@
+Khi triển khai một mô hình phức tạp như **Metro Ethernet/MPLS** trên **Mininet**, bạn sẽ rất dễ gặp phải các lỗi về cấu hình hệ thống và giao thức. Dưới đây là những lỗi "kinh điển" mà bạn cần đặc biệt lưu ý để tránh mất hàng giờ đồng hồ debug:
+1. Lỗi về Kernel và Hệ thống (Hạ tầng)
+Chưa nạp Module MPLS:** Đây là lỗi phổ biến nhất. Nếu bạn không chạy `modprobe mpls_router` và `mpls_iptunnel`, các lệnh cấu hình MPLS trong FRR sẽ không có tác dụng vì Kernel Linux không hiểu nhãn là gì.
+Chưa bật IP Forwarding:** Các Router CE, PE, P bản chất là các Node Linux. Nếu không bật `net.ipv4.ip_forward=1`, chúng sẽ hoạt động như một Host (nhận gói tin rồi bỏ) chứ không chuyển tiếp gói tin đi.
+Giới hạn nhãn (Label Range):** Kernel mặc định có thể không cấp phát nhãn. Bạn phải thiết lập `net.mpls.platform_labels` (ví dụ: 100000) thì LDP mới có thể gán nhãn được.
+
+2. Lỗi về Định tuyến (OSPF & LDP)
+Thiếu Router-ID:** Cả OSPF và LDP đều cần một địa chỉ IP duy nhất (thường là Loopback 0) để làm Router-ID. Nếu không cấu hình Loopback hoặc Router-ID, các mối quan hệ láng giềng (neighbor) sẽ không thiết lập được.
+Sai diện quảng bá OSPF:** Nếu bạn quên quảng bá (network) dải IP nối giữa các Router vào OSPF, các PE sẽ không thấy nhau, dẫn đến LDP không thể thiết lập đường hầm (LSP) xuyên suốt.
+MTU (Maximum Transmission Unit):** Khi bạn bọc thêm nhãn MPLS (và thêm lớp VPLS), kích thước gói tin sẽ tăng lên. Nếu không tăng MTU trên các cổng kết nối (ví dụ lên 1508 hoặc 1512 byte), các gói tin lớn sẽ bị hủy (drop), dẫn đến lỗi "ping nhỏ thì thông, ping lớn thì chết".
+
+3. Lỗi cấu hình VPLS / Layer 2
+Trùng lặp Bridge-Group:** Trong cấu hình VPLS, các interface nối với CE phải được đưa vào một cầu nối (bridge). Nếu cấu hình sai interface hoặc trùng ID giữa các khách hàng khác nhau, dữ liệu sẽ bị gửi nhầm chi nhánh.
+Split Horizon (Lặp vòng):** VPLS mặc định có cơ chế chống loop. Nếu bạn thiết lập mô hình Backbone dạng Full-mesh nhưng cấu hình không đúng, một số chi nhánh có thể không thấy nhau do cơ chế bảo vệ này.
+
+4. Lỗi trong mô hình LAN chi nhánh
+Chi nhánh 2 (3-layer):** Lỗi cấu hình **VLAN Trunking**. Nếu các switch không cho phép VLAN đi qua cổng kết nối (Trunk), các phòng ban sẽ không thể liên lạc với nhau.
+Chi nhánh 3 (Leaf-Spine):** Lỗi định tuyến nội bộ. Do có nhiều đường đi (Multipath), nếu không bật **ECMP** (Equal-Cost Multi-Path), bạn sẽ không tận dụng được hết băng thông của mô hình này và khó so sánh hiệu năng một cách chính xác.
+
+5. Lỗi khi đo lường (Testing)
+Đo Throughput quá sớm:** Bạn cần đợi khoảng 30-60 giây sau khi khởi động Mininet để các giao thức OSPF và LDP hội tụ (converge) hoàn toàn. Nếu đo ngay lập tức, kết quả Throughput sẽ bằng 0 hoặc rất thấp.
+Lỗi nhầm lẫn đơn vị:** Khi dùng `iperf`, hãy chú ý đơn vị là **bits/sec** (b) hay **Bytes/sec** (B). Khi vẽ đồ thị, nếu không thống nhất đơn vị, các con số sẽ trở nên vô nghĩa.
+Kết quả Ping ảo:** Đôi khi lệnh ping đầu tiên bị mất (request timeout) do quá trình học địa chỉ MAC (ARP). Đây là điều bình thường, bạn nên lấy kết quả từ lần ping thứ 2 trở đi để đảm bảo tính khách quan.
+
+**Mẹo nhỏ:** Hãy luôn sử dụng lệnh `traceroute` hoặc `mtr`. Nếu bạn thấy các dòng có ghi chú dạng `[MPLS: Labels 16, Exp 0]`, chúc mừng bạn, cấu hình MPLS của bạn đã thành công!

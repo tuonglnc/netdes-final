@@ -1,0 +1,54 @@
+[20:24:27] HỆ THỐNG ĐÃ SẴN SÀNG.
+[20:24:27] Kết quả lưu tại: /home/katun/repo/TKM/final/source/test_results
+[20:24:35] --- Đang chạy bài kiểm tra [PING] từ h2 -> h5 ---
+[20:24:35] RTT Avg: -1.0 ms | Packet Loss: 100%
+[20:24:35] Log thô:
+
+[20:24:42] --- Đang chạy bài kiểm tra [PING] từ h6 -> h5 ---
+[20:24:42] RTT Avg: -1.0 ms | Packet Loss: 100%
+[20:24:42] Log thô:
+
+[20:24:46] Đang đo lường băng thông giữa các chi nhánh...
+[20:24:47]  h1->h5: 0.0 Mbps
+[20:24:48]  h1->s1: 0.0 Mbps
+[20:24:49]  h5->s1: 0.0 Mbps
+[20:24:49] Đã lưu biểu đồ: /home/katun/repo/TKM/final/source/test_results/throughput_comparison.png
+[13:49:36] HỆ THỐNG ĐÃ SẴN SÀNG.
+[13:49:36] Kết quả lưu tại: /home/katun/repo/TKM/final/source/test_results
+[13:49:43] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:49:43] RTT Avg: -1.0 ms | Packet Loss: 100%
+[13:49:43] Log thô:
+
+[13:49:48] Đang đo lường băng thông giữa các chi nhánh...
+[13:49:49]  h1->h5: 0.0 Mbps
+[13:49:50]  h1->s1: 0.0 Mbps
+[13:49:51]  h5->s1: 0.0 Mbps
+[13:49:51] Đã lưu biểu đồ: /home/katun/repo/TKM/final/source/test_results/throughput_comparison.png
+[13:49:56] Khởi chạy Stress Test bằng ngập lụt Ping + Iperf...
+[13:49:56] Đang đo Ping RTT khi có tải liên tục 10s...
+[13:49:59] Đang đo lường độ trễ (Delay) và Ping...
+[13:49:59]  h1->h5: RTT Avg = -1.0 ms
+[13:49:59]  h1->s1: RTT Avg = -1.0 ms
+[13:49:59]  h5->s1: RTT Avg = -1.0 ms
+[13:49:59] Đã lưu biểu đồ: /home/katun/repo/TKM/final/source/test_results/delay_comparison.png
+[13:50:05] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:50:05] RTT Avg: -1.0 ms | Packet Loss: 100%
+[13:50:05] Log thô:
+
+[13:50:06] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:50:06] RTT Avg: -1.0 ms | Packet Loss: 100%
+[13:50:06] Log thô:
+
+[13:50:06] Stress test hoàn thành. Export: /home/katun/repo/TKM/final/source/test_results/stress_test_delay.png và data CSV.
+[13:50:13] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:50:13] RTT Avg: -1.0 ms | Packet Loss: 100%
+[13:50:13] Log thô:
+
+[13:50:21] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:50:21] RTT Avg: -1.0 ms | Packet Loss: 100%
+[13:50:21] Log thô:
+
+[13:50:22] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:50:22] RTT Avg: -1.0 ms | Packet Loss: 100%
+[13:50:22] Log thô:
+

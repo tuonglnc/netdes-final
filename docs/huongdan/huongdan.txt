@@ -1,0 +1,31 @@
+- đầu tiên bạn cần xem debai.txt để hiểu được yêu cầu đề bài.
+- tiếp theo bạn cần xem qua node.txt để hiểu được các vấn đề cần lưu ý
+- tiếp theo bạn cần xem qua các file trong thư mục /source/thamkhao
+- tiếp theo bạn cần code file topology.py trong thư mục source với các vấn đề sau:
+    + Kích hoạt MPLS Kernel: Chạy lệnh modprobe để nạp các module mpls_router và mpls_iptunnel.
+    + Viết file topology.py:
+    + Định nghĩa các Class Router (CE, PE, P).
+    + Thiết lập kết nối vật lý (Links) cho 3 chi nhánh (Flat, 3-layer, Leaf-Spine).
+    + Thiết lập kết nối vật lý cho lõi Backbone (P-P, P-PE).
+    + Gán địa chỉ IP cơ bản: Thiết lập IP cho các interface của tất cả thiết bị và đặt IP Loopback cho các Router PE, P.
+- tiếp theo Cấu hình Mạng LAN nội bộ
+    + Chi nhánh 1 (Flat): Cấu hình IP và Default Gateway cho Host.
+    + Chi nhánh 2 (3-layer):
+        Cấu hình VLAN trên Switch Access/Distribution.
+        Cấu hình Inter-VLAN Routing (SVI hoặc Sub-interface).
+    + Chi nhánh 3 (Leaf-Spine): Cấu hình định tuyến nội bộ (OSPF) để toàn bộ chi nhánh thông suốt tới CE3.
+    + Định tuyến CE-PE: Cấu hình định tuyến (thường là Static Route hoặc BGP) để các chi nhánh đẩy được traffic tới Router biên của ISP.
+- tiếp theo Cấu hình Metro Ethernet / MPLS Backbone:
+    + Cấu hình OSPF (Underlay): Chạy OSPF trên các Router P và PE để toàn bộ các Loopback trong lõi thông nhau.
+    + Cấu hình LDP: Bật giao thức phân phối nhãn trên các cổng nối giữa PE-P và P-P.
+    + Cấu hình VPLS:
+        Thiết lập các Bridge-group trên PE.
+        Cấu hình các Neighbor VPLS để tạo đường hầm Layer 2 xuyên qua MPLS.
+    + Kiểm tra thông suốt: Đảm bảo Host chi nhánh 1 có thể ping thấy Host chi nhánh 3.
+- tiếp theo bạn cần tham khảo file source/thamkhao/tool.py để hiểu và  viết file tool.py theo bài này để thực hiện các chức năng Kiểm thử và Thu thập số liệu sau:
+    + Kiểm tra Traceroute: Xác nhận gói tin có đi qua các nhãn (labels) MPLS không.
+    + Đo Throughput: Sử dụng iperf đo băng thông giữa các chi nhánh.
+    + Đo Delay/Jitter/Loss: Sử dụng ping (in kết quả thô) để lấy thông số độ trễ và tỷ lệ mất gói.
+    + Stress Test: Tăng tải mạng (bằng iperf) để xem sự thay đổi của độ trễ và mất gói.
+    + tích hợp các chức năng in ra các file ảnh và file .csv như tool đã tham khảo.
+    

@@ -1,0 +1,19 @@
+link tham khảo tài liệu về router frr:
+https://docs.frrouting.org/en/latest/about.html#platform-support
+
+link youtube tham khảo kiến thức về MPLS
+https://www.youtube.com/watch?v=WCiwM2Eziyg
+
+https://www.youtube.com/watch?v=bpXoda95ozY
+
+https://www.youtube.com/watch?v=hy2lv6K-Jpc
+
+link github tham khảo source code về các mô hình:
+mô hình 1 , 2 
+https://github.com/dungabx/TKM/tree/main/Baitap3_ver3_debai
+
+mô hình 3:
+https://github.com/dungabx/TKM/blob/main/Baitap4/source/topology.py
+
+link github tham khảo tool xuất dữ liệu:
+https://github.com/dungabx/TKM/blob/main/Baitap4/source/tool.py
