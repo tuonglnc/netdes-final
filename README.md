@@ -1,6 +1,7 @@
-# Network Design Final Project - [Tên Đồ Án Của Bạn]
+# Network Design Final Project 
+## Thiết kế và triển khai mạng Metro Ethernet sử dụng MPLS cho kết nối đa chi nhánh doanh nghiệp
 
-Đồ án cuối kỳ môn Thiết kế mạng (NetDes) thực hiện bởi Lê Nguyễn Cát Tường.
+Đồ án cuối kỳ môn Thiết kế mạng (HK2/25-26) thực hiện bởi 52300266 - Lê Nguyễn Cát Tường.
 
 ## 📌 Giới thiệu
 Mô tả ngắn gọn về đồ án (Ví dụ: Mô phỏng mạng doanh nghiệp sử dụng SDN/Mininet hoặc Spine-Leaf architecture).
