@@ -51,17 +51,23 @@ Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
     + Đo Throughput: Sử dụng iperf đo băng thông giữa các chi nhánh.
     + Đo Delay/Jitter/Loss: Sử dụng ping (in kết quả thô) để lấy thông số độ trễ và tỷ lệ mất gói.
     + Stress Test: Tăng tải mạng (bằng iperf) để xem sự thay đổi của độ trễ và mất gói.
-    + tích hợp các chức năng in ra các file ảnh và file .csv như tool đã tham khảo.
-- [ ] Viết báo cáo Latex -- xem kỹ [đề bài](./docs/debai.txt) để thực hiện. Hãy chọn lọc các lệnh show / ... để chứng minh mình đã cấu hình được và screenshot bỏ vào báo cáo tăng độ tin cậy nhé !
+    + Tích hợp các chức năng in ra các file ảnh và file .csv như tool đã tham khảo.
+- [ ] Viết báo cáo Latex -- xem kỹ [đề bài](./docs/debai.txt) để thực hiện. Hãy tìm và chọn lọc các lệnh *show, traceroute, iperf,...* để chứng minh đã cấu hình được và screenshot bỏ vào báo cáo tăng độ tin cậy nhé !
 
 ### 5. Sản phẩm cuối cùng (đề xuất): Tất cả zip lại đặt tên FINAL_MSSV_HOTEN.zip
-- /source: toàn bộ code liên quan, bao gồm: topology.py, config_backbone.py, config_branch1.py, config_branch2.py, config_branch3.py, tool.py, các folders giữ test_results từ tool.py,... ***Lưu ý:*** Bám sát đề và đừng nộp những file không liên quan như **folder /setup** bạn nhé ! 
-- /report: Report.pdf, main.tex
-- /image: hình ảnh topology (draw.io) và hình ảnh liên quan (nếu có)
+- **/source:** toàn bộ code liên quan, bao gồm: topology.py, config_backbone.py, config_branch1.py, config_branch2.py, config_branch3.py, tool.py, các folders giữ test_results từ tool.py,... ***Lưu ý:*** Bám sát đề và đừng nộp những file không liên quan như **folder /setup** bạn nhé ! 
+- **/report:** Report.pdf, main.tex
+- **/image:** hình ảnh topology (draw.io) và hình ảnh liên quan (nếu có)
 ***Lưu ý:*** Đây chỉ là đề xuất, có thể bố trí bài nộp theo cách của riêng bạn.
 ---
 ### Thông tin tác giả
 * **Họ tên:** Lê Nguyễn Cát Tường
 * **Tổ chức:** Tôn Đức Thắng University (TDTU)
 * **Năm thực hiện:** © 2026
+---
+Hi vọng mọi kiến thức sẽ được bạn học tiếp nhận một cách đơn giản và vui vẻ. 
+Rất mong nhận được sự thảo luận của bạn học khi có thắc mắc hoặc có vấn đề cần chỉnh sửa qua zalo^^
+Cảm ơn vì đã ghé thăm, see ya~~~
+
+🚀 **You are what you do!**
 
