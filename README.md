@@ -18,11 +18,11 @@ Mô tả ngắn gọn về đồ án (Ví dụ: Mô phỏng mạng doanh nghiệ
    - Python 3.x
    - Chạy lệnh setup
    ```bash
-   # Đứng tại thư mục /source chạy: 
-   sudo bash /setup/auto_fix_env.sh
+   # Lần đầu clone project về chạy: 
+   sudo bash source/setup/auto_fix_env.sh
 
    # Những lần sau có thể chạy check_env để check không cần setup lại
-   sudo bash /setup/check_env.sh
+   sudo bash source/setup/check_env.sh
    ```
    
 2. **Chạy mô phỏng:**
