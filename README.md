@@ -4,7 +4,7 @@
 Đồ án cuối kỳ môn Thiết kế mạng (HK2/25-26) thực hiện bởi 52300266 - Lê Nguyễn Cát Tường.
 
 ## 📌 Giới thiệu
-Mô tả ngắn gọn về đồ án (Ví dụ: Mô phỏng mạng doanh nghiệp sử dụng SDN/Mininet hoặc Spine-Leaf architecture).
+Mô phỏng mạng doanh nghiệp sử dụng SDN/Mininet hoặc Spine-Leaf architecture).
 
 ## 📂 Cấu trúc thư mục
 - `source/`: Mã nguồn chính của dự án (Python/Shell scripts).
@@ -60,6 +60,10 @@ Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
 - **/image:** hình ảnh topology (draw.io) và hình ảnh liên quan (nếu có)
 ***Lưu ý:*** Đây chỉ là đề xuất, có thể bố trí bài nộp theo cách của riêng bạn.
 ---
+### 📚 Tài liệu tham khảo
+* **Dự án gốc:** [TKM Final Project](https://github.com/dungabx/TKM/tree/main/final) – bởi `@dungabx`.
+* **Mô tả:** Tham khảo cấu trúc thư mục và cách triển khai logic cho sơ đồ mạng trong bài tập lớn.
+
 ### Thông tin tác giả
 * **Họ tên:** Lê Nguyễn Cát Tường
 * **Tổ chức:** Tôn Đức Thắng University (TDTU)
