@@ -31,8 +31,8 @@ Mô tả ngắn gọn về đồ án (Ví dụ: Mô phỏng mạng doanh nghiệ
    sudo python3 <ten_file_chinh>.py
    ```
 
-3. Kiểm tra kết nối:
-Tham khảo các lệnh test tại test_commands.md.
+3. Kiểm tra:
+Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
 
 ## 📊 Kết quả
 
@@ -42,6 +42,22 @@ Tham khảo các lệnh test tại test_commands.md.
 > **LƯU Ý:** Bạn có thể xem file thiết kế gốc tại thư mục `image/` để chỉnh sửa bằng draw.io.
 > *PHẢI SỬA CHO ĐÚNG VỚI BÀI, DỰA TRÊN topology.py của riêng bạn nhé !*
 
+4. Nhiệm vụ tiếp theo để hoàn thành bài:
+- [ ] Xem lại và tìm hiểu bức tranh tổng thể của bài
+- [ ] Hiểu về: Metro Ethernet MAN, MPLS, MPLS VPN (gồm có L2VPN VÀ L3VPN), VRF, BGP, MP BGP, OSPF,...
+- [ ] Hoàn thành tool.py đo 4 nội dung: Throughput, Delay, Packet loss, Jitter. Cần xuất được bảng, sơ đồ để thống kê (tham khảo [tool.py](./source/tool.py))
+    + Kiểm tra Traceroute: Xác nhận gói tin có đi qua các nhãn (labels) MPLS không.
+    + Đo Throughput: Sử dụng iperf đo băng thông giữa các chi nhánh.
+    + Đo Delay/Jitter/Loss: Sử dụng ping (in kết quả thô) để lấy thông số độ trễ và tỷ lệ mất gói.
+    + Stress Test: Tăng tải mạng (bằng iperf) để xem sự thay đổi của độ trễ và mất gói.
+    + tích hợp các chức năng in ra các file ảnh và file .csv như tool đã tham khảo.
+- [ ] Viết báo cáo Latex -- xem kỹ [đề bài](./docs/debai.txt) để thực hiện. Hãy chọn lọc các lệnh show / ... để chứng minh mình đã cấu hình được và screenshot bỏ vào báo cáo tăng độ tin cậy nhé !
+
+5. Sản phẩm cuối cùng (đề xuất): Tất cả zip lại đặt tên FINAL_MSSV_HOTEN.zip
+- /source: toàn bộ code liên quan, bao gồm: topology.py, config_backbone.py, config_branch1.py, config_branch2.py, config_branch3.py, tool.py, các folders giữ test_results từ tool.py,...
+- /report: Report.pdf, main.tex
+- /image: hình ảnh topology (draw.io) và hình ảnh liên quan (nếu có)
+***Lưu ý:*** đây chỉ là đề xuất, có thể bố trí bài nộp theo cách của riêng bạn.
 ---
 ### Thông tin tác giả
 * **Họ tên:** Lê Nguyễn Cát Tường
