@@ -31,7 +31,8 @@ Tham khảo các lệnh test tại test_commands.md.
 ### Sơ đồ hệ thống (Topology)
 ![Network Topology](./image/netdes-final-hihi.drawio.png)
 
-> **Lưu ý:** Bạn có thể xem file thiết kế gốc tại thư mục `image/` để chỉnh sửa bằng draw.io.
+> **LƯU Ý:** Bạn có thể xem file thiết kế gốc tại thư mục `image/` để chỉnh sửa bằng draw.io.
+> *PHẢI SỬA CHO ĐÚNG VỚI BÀI, DỰA TRÊN topology.py của riêng bạn nhé !*
 
 ---
 ### Thông tin tác giả
