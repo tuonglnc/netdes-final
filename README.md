@@ -55,10 +55,12 @@ Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
 - [ ] Viết báo cáo Latex -- xem kỹ [đề bài](./docs/debai.txt) để thực hiện. Hãy tìm và chọn lọc các lệnh *show, traceroute, iperf,...* để chứng minh đã cấu hình được và screenshot bỏ vào báo cáo tăng độ tin cậy nhé !
 
 ### 5. Sản phẩm cuối cùng (đề xuất): Tất cả zip lại đặt tên FINAL_MSSV_HOTEN.zip
-- **/source:** toàn bộ code liên quan, bao gồm: topology.py, config_backbone.py, config_branch1.py, config_branch2.py, config_branch3.py, tool.py, các folders giữ test_results từ tool.py,... ***Lưu ý:*** Bám sát đề và đừng nộp những file không liên quan như **folder /setup** bạn nhé ! 
+- **/source:** toàn bộ code liên quan, bao gồm: topology.py, config_backbone.py, config_branch1.py, config_branch2.py, config_branch3.py, tool.py, các folders giữ test_results từ tool.py,...
 - **/report:** Report.pdf, main.tex
 - **/image:** hình ảnh topology (draw.io) và hình ảnh liên quan (nếu có)
-***Lưu ý:*** Đây chỉ là đề xuất, có thể bố trí bài nộp theo cách của riêng bạn.
+- ***Lưu ý:***
+  + Đây chỉ là đề xuất, có thể bố trí bài nộp theo cách của riêng bạn.
+  + Bám sát đề và đừng nộp những file không liên quan như **folder /setup** bạn nhé ! 
 ---
 ### 📚 Tài liệu tham khảo
 * **Dự án gốc:** [TKM Final Project](https://github.com/dungabx/TKM/tree/main/final) – bởi `@dungabx`.
