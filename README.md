@@ -4,7 +4,16 @@
 Đồ án cuối kỳ môn Thiết kế mạng (HK2/25-26) thực hiện bởi 52300266 - Lê Nguyễn Cát Tường.
 
 ## 📌 Giới thiệu
-Đứng ở cả 2 góc nhìn là **Khách hàng (School Campus)** và **Nhà cung cấp dịch vụ (ISP)**, đi sâu tìm hiểu ***Multiprotocol Label Switching***, dự án mô phỏng và triển khai hệ thống mạng Metro Ethernet sử dụng công nghệ MPLS nhằm kết nối nhiều chi nhánh doanh nghiệp thông qua hạ tầng của nhà cung cấp dịch vụ. Dự án tập trung vào việc xây dựng mô hình mạng với các kiến trúc LAN khác nhau (flat, 2-layer, 3-layer) và đánh giá hiệu năng truyền dữ liệu giữa các chi nhánh. Thông qua việc áp dụng MPLS, hệ thống cho phép truyền tải nhiều loại giao thức khác nhau trên cùng một hạ tầng mạng (Multi-Protocol), đồng thời hỗ trợ định tuyến linh hoạt (Label-Switching), tăng tốc chuyển tiếp gói tin và đảm bảo phân tách lưu lượng hiệu quả trong môi trường mạng doanh nghiệp.
+**Đứng ở cả hai góc nhìn: _Khách hàng (School Campus)_ và _Nhà cung cấp dịch vụ (ISP)_, dự án tập trung nghiên cứu _Multiprotocol Label Switching (MPLS)_ và ứng dụng trong thực tế.**
+
+Dự án mô phỏng và triển khai hệ thống **_Metro Ethernet_ sử dụng MPLS** nhằm kết nối nhiều chi nhánh doanh nghiệp thông qua hạ tầng của ISP. Hệ thống được xây dựng với các kiến trúc mạng LAN khác nhau như **_Flat Network_**, **_2-layer (Leaf–Spine)_** và **_3-layer (Core–Distribution–Access)_**, từ đó đánh giá hiệu năng truyền dữ liệu giữa các chi nhánh.
+
+Thông qua việc áp dụng **_MPLS_**, hệ thống:
+
+- Hỗ trợ **_Multi-Protocol_**: truyền tải nhiều loại giao thức trên cùng một hạ tầng  
+- Tăng hiệu quả định tuyến với **_Label Switching_**  
+- **Tăng tốc chuyển tiếp gói tin** so với IP routing truyền thống  
+- **Phân tách lưu lượng (Traffic Engineering)** hiệu quả trong môi trường doanh nghiệp  
 
 ## 📂 Cấu trúc thư mục
 - `source/`: Mã nguồn chính của dự án (Python/Shell scripts).
