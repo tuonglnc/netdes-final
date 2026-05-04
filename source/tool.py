@@ -301,3 +301,4 @@ if __name__ == '__main__':
         print("Lưu ý: Bạn nên chạy tool bằng quyền SUDO hoặc tool sẽ tự nhúng sudo.")
     app = AppTool()
     app.mainloop()
+    
