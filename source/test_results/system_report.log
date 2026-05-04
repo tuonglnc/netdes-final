@@ -1,0 +1,86 @@
+[13:16:43] HỆ THỐNG ĐÃ SẴN SÀNG.
+[13:16:43] Kết quả lưu tại: /home/katun/repo/netdes-final/source/test_results
+[13:16:54] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:16:54] RTT Avg: -1.0 ms | Jitter (mdev): 0.0 ms | Packet Loss: 100%
+[13:16:54] Log thô:
+
+[13:16:57] --- Đang chạy bài kiểm tra [PATH] từ h1 -> s2 ---
+[13:16:57] Traceroute:
+
+[13:17:06] --- Đang chạy bài kiểm tra [BW] từ h1 -> s2 ---
+[13:17:07] Thông lượng: 0.0 Mbps
+[13:22:19] HỆ THỐNG ĐÃ SẴN SÀNG.
+[13:22:19] Kết quả lưu tại: /home/katun/repo/netdes-final/source/test_results
+[13:22:22] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:22:25] RTT Avg: 0.383 ms | Jitter (mdev): 0.164 ms | Packet Loss: 0%
+[13:22:41] --- Đang chạy bài kiểm tra [PING] từ h1 -> h5 ---
+[13:22:44] RTT Avg: 0.452 ms | Jitter (mdev): 0.331 ms | Packet Loss: 0%
+[13:22:46] --- Đang chạy bài kiểm tra [PATH] từ h1 -> h5 ---
+[13:22:51] Traceroute:
+1  192.168.1.1  0.044 ms  0.010 ms  0.008 ms
+ 2  10.100.1.1  0.023 ms  0.012 ms  0.012 ms
+ 3  * * *
+ 4  10.100.2.2  0.038 ms  0.056 ms  0.022 ms
+ 5  * * *
+[13:23:00] Đang đo lường băng thông giữa các chi nhánh...
+[13:23:07]  h1->h5: 95.2 Mbps
+[13:23:13]  h1->s1: 98.3 Mbps
+[13:23:19]  h5->s1: 96.1 Mbps
+[13:23:19] Đã lưu biểu đồ: /home/katun/repo/netdes-final/source/test_results/throughput_comparison.png
+[13:23:26] Đang đo lường độ trễ (Delay) và Ping...
+[13:23:30]  h1->h5: RTT Avg = 0.254 ms
+[13:23:33]  h1->s1: RTT Avg = 0.291 ms
+[13:23:36]  h5->s1: RTT Avg = 0.326 ms
+[13:23:36] Đã lưu biểu đồ: /home/katun/repo/netdes-final/source/test_results/delay_comparison.png
+[13:23:39] Khởi chạy Stress Test bằng ngập lụt Ping + Iperf...
+[13:23:39] Đang đo Ping RTT và Packet Loss khi có tải liên tục 10s...
+[13:24:20] Stress test hoàn thành. Export: /home/katun/repo/netdes-final/source/test_results/stress_test_metrics.png và data CSV.
+[13:24:22] Đang thu thập số liệu thống kê hiệu năng (Throughput, Delay, Loss, Jitter)...
+[13:24:22]   Đo lường h1 -> h5...
+[13:24:31]     => BW: 94.1 Mbps, RTT: 0.304 ms, Jitter: 0.247 ms, Loss: 0%
+[13:24:32]   Đo lường h1 -> s1...
+[13:24:41]     => BW: 99.0 Mbps, RTT: 6.496 ms, Jitter: 9.546 ms, Loss: 0%
+[13:24:41]   Đo lường h5 -> s1...
+[13:24:51]     => BW: 96.0 Mbps, RTT: 0.393 ms, Jitter: 0.217 ms, Loss: 0%
+[13:24:51] Đã xuất bảng thống kê: /home/katun/repo/netdes-final/source/test_results/performance_stats.csv
+[13:25:00] --- Đang chạy bài kiểm tra [BW] từ h1 -> h5 ---
+[13:25:06] Thông lượng: 94.7 Mbps
+[13:49:23] HỆ THỐNG ĐÃ SẴN SÀNG.
+[13:49:23] Kết quả tự động lưu tại: /home/katun/repo/netdes-final/source/test_results
+[13:49:33] Đang thu thập số liệu thống kê hiệu năng (Throughput, Delay, Loss, Jitter)...
+[13:49:33]   Đo lường h1 -> h5...
+[13:49:43]     => BW: 95.7 Mbps, RTT: 0.196 ms, Jitter: 0.047 ms, Loss: 0%
+[13:49:43]   Đo lường h1 -> s1...
+[13:49:52]     => BW: 94.0 Mbps, RTT: 0.205 ms, Jitter: 0.035 ms, Loss: 0%
+[13:49:52]   Đo lường h5 -> s1...
+[13:50:02]     => BW: 97.3 Mbps, RTT: 0.539 ms, Jitter: 0.289 ms, Loss: 0%
+[13:50:02] Đã xuất bảng thống kê: /home/katun/repo/netdes-final/source/test_results/performance_stats.csv
+[13:50:05] Đang đo lường băng thông giữa các chi nhánh...
+[13:50:11]  h1->h5: 93.9 Mbps
+[13:50:18]  h1->s1: 98.0 Mbps
+[13:50:24]  h5->s1: 98.7 Mbps
+[13:50:24] Đã lưu biểu đồ: /home/katun/repo/netdes-final/source/test_results/throughput_comparison.png
+[13:50:27] Đang đo lường độ trễ (Delay) và Ping...
+[13:50:30]  h1->h5: RTT Avg = 0.356 ms
+[13:50:34]  h1->s1: RTT Avg = 0.318 ms
+[13:50:37]  h5->s1: RTT Avg = 0.508 ms
+[13:50:37] Đã lưu biểu đồ: /home/katun/repo/netdes-final/source/test_results/delay_comparison.png
+[13:50:43] Khởi chạy Stress Test bằng ngập lụt Ping + Iperf...
+[13:50:43] Đang đo Ping RTT và Packet Loss khi có tải liên tục 10s...
+[13:51:25] Stress test hoàn thành. Export: /home/katun/repo/netdes-final/source/test_results/stress_test_metrics.png và data CSV.
+[13:51:27] Đang sinh báo cáo phân tích kiến trúc LAN (YC 4.3)...
+[13:51:27] ==============================
+[13:51:27] ĐÃ XUẤT BÁO CÁO PHÂN TÍCH LAN (MD):
+[13:51:27]  - File: /home/katun/repo/netdes-final/source/test_results/LAN_Architecture_Analysis.md
+[13:51:27] ==============================
+[13:51:32] --- Đang chạy bài kiểm tra [PATH] từ h1 -> s2 ---
+[13:51:32] Traceroute:
+1  192.168.1.1  0.210 ms  0.017 ms  0.009 ms
+ 2  10.100.1.1  0.025 ms  0.013 ms  0.013 ms
+ 3  * * *
+ 4  * * *
+ 5  10.3.255.2  0.054 ms  0.026 ms  0.024 ms
+[13:54:35] --- Đang chạy bài kiểm tra [PING] từ h1 -> s2 ---
+[13:54:38] RTT Avg: 0.332 ms | Jitter (mdev): 0.116 ms | Packet Loss: 0%
+[13:54:43] --- Đang chạy bài kiểm tra [BW] từ h1 -> s2 ---
+[13:54:50] Thông lượng: 98.3 Mbps
