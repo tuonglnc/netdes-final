@@ -72,7 +72,7 @@ class AppTool(tk.Tk):
         self.geometry("950x650")
         self.configure(bg="#2d2d2d")
         
-        lbl_title = tk.Label(self, text="HỆ THỐNG KIỂM THỬ MẠNG (THEO YÊU CẦU ĐỀ TÀI)", font=("Arial", 16, "bold"), fg="white", bg="#2d2d2d", pady=15)
+        lbl_title = tk.Label(self, text="HỆ THỐNG KIỂM THỬ MẠNG", font=("Arial", 16, "bold"), fg="white", bg="#2d2d2d", pady=15)
         lbl_title.pack()
         
         main_frame = tk.Frame(self, bg="#2d2d2d")
@@ -263,27 +263,49 @@ class AppTool(tk.Tk):
 
     def generate_lan_report(self):
         def task():
-            self.log_ui("Đang sinh báo cáo phân tích kiến trúc LAN (YC 4.3)...")
+            self.log_ui("Đang đo lường và sinh báo cáo phân tích LAN (YC 4.3)...")
+            
+            # Đo đạc Branch 1 (Mạng phẳng)
+            self.log_ui(" Đo lường Chi nhánh 1 (h1 -> h2)...")
+            b1_rtt, _, _, _ = measure_rtt('h1', 'h2')
+            b1_bw = measure_throughput('h1', 'h2')
+            b1_path = len(measure_path('h1', 'h2').strip().split('\n')) if b1_rtt > 0 else 0
+            
+            # Đo đạc Branch 2 (Mạng 3 lớp)
+            self.log_ui(" Đo lường Chi nhánh 2 (h5 -> h6)...")
+            b2_rtt, _, _, _ = measure_rtt('h5', 'h6')
+            b2_bw = measure_throughput('h5', 'h6')
+            b2_path = len(measure_path('h5', 'h6').strip().split('\n')) if b2_rtt > 0 else 0
+            
+            # Đo đạc Branch 3 (Spine-Leaf)
+            self.log_ui(" Đo lường Chi nhánh 3 (s1 -> s2)...")
+            b3_rtt, _, _, _ = measure_rtt('s1', 's2')
+            b3_bw = measure_throughput('s1', 's2')
+            b3_path = len(measure_path('s1', 's2').strip().split('\n')) if b3_rtt > 0 else 0
+            
             report_file = os.path.join(LOG_DIR, "LAN_Architecture_Analysis.md")
             
-            report_content = """# Phân tích Kiến trúc LAN (Yêu cầu 4.3)
+            report_content = f"""# Phân tích Kiến trúc LAN (Yêu cầu 4.3)
+
+*Báo cáo này được tạo tự động dựa trên số liệu đo lường trực tiếp từ Topology Mininet.*
 
 ## 1. Chi nhánh 1 (Mạng phẳng - Flat Network)
+- **Đo lường nội bộ (h1 -> h2):** Độ trễ RTT: `{b1_rtt} ms` | Thông lượng: `{b1_bw} Mbps` | Số lượng Hop (Traceroute): `{b1_path}`
 - **Đặc điểm:** Tất cả thiết bị chung 1 Broadcast Domain, dùng STP.
-- **Ưu điểm:** Cấu hình đơn giản, phù hợp chi nhánh siêu nhỏ.
-- **Nhược điểm:** Dễ xảy ra Broadcast storm, hội tụ STP chậm. Không tối ưu cho số lượng thiết bị lớn.
+- **Phân tích:** Do các máy tính kết nối trực tiếp qua Switch L2 (0 hop routing), độ trễ nội bộ rất thấp. Tuy nhiên cấu hình đơn giản này dễ xảy ra Broadcast storm, hội tụ STP chậm. Không tối ưu cho số lượng thiết bị lớn.
 - **Tương tác MPLS:** Khi ping qua mạng MPLS Backbone, độ trễ và thông lượng sẽ bị ảnh hưởng nếu mạng nội bộ đang bị tắc nghẽn ARP.
 
 ## 2. Chi nhánh 2 (Mạng 3 lớp - Core/Distribution/Access)
+- **Đo lường nội bộ (h5 -> h6):** Độ trễ RTT: `{b2_rtt} ms` | Thông lượng: `{b2_bw} Mbps` | Số lượng Hop (Traceroute): `{b2_path}`
 - **Đặc điểm:** Chia tầng rõ rệt, định tuyến OSPF nội bộ.
-- **Ưu điểm:** Khả năng mở rộng cao, dự phòng tốt.
-- **Nhược điểm:** Cấu hình phức tạp, chi phí cao. 
-- **Tương tác MPLS:** Số hop count nội bộ nhiều hơn mạng phẳng, nhưng kiểm soát luồng giao thông cực tốt. Rất phù hợp để tích hợp với BGP Edge của nhà mạng (Router PE).
+- **Phân tích:** Khả năng mở rộng cực cao, dự phòng tốt, kiểm soát luồng giao thông hiệu quả. 
+- **Tương tác MPLS:** Rất phù hợp để tích hợp với BGP Edge của ISP (Router PE).
 
 ## 3. Chi nhánh 3 (Mạng Spine-Leaf 2 lớp)
+- **Đo lường nội bộ (s1 -> s2):** Độ trễ RTT: `{b3_rtt} ms` | Thông lượng: `{b3_bw} Mbps` | Số lượng Hop (Traceroute): `{b3_path}`
 - **Đặc điểm:** Mọi Switch Access (Leaf) kết nối tới tất cả Switch Lõi (Spine) tạo thành Full-mesh.
-- **Ưu điểm:** Băng thông nội bộ cực cao (East-West traffic), ECMP load-balancing siêu tốc. Bất kỳ 2 host nào cũng chỉ cách nhau 1 hop Spine.
-- **Tương tác MPLS:** Kiến trúc này kết hợp hoàn hảo với MPLS Backbone để đẩy dữ liệu lớn từ cụm Server nội bộ ra chi nhánh khác với thông lượng (Throughput) cao nhất, độ trễ thấp nhất.
+- **Phân tích:** Băng thông nội bộ cực cao (East-West traffic), ECMP load-balancing siêu tốc. Bất kỳ 2 host nào cũng chỉ cách nhau 1 hop Spine nên mức độ trễ rất ổn định và thông lượng tiệm cận giới hạn cáp.
+- **Tương tác MPLS:** Kiến trúc này kết hợp hoàn hảo với MPLS Backbone để đẩy dữ liệu lớn từ cụm Server nội bộ ra chi nhánh khác với thông lượng cao nhất.
 """
             with open(report_file, 'w', encoding='utf-8') as f:
                 f.write(report_content)
@@ -301,4 +323,3 @@ if __name__ == '__main__':
         print("Lưu ý: Bạn nên chạy tool bằng quyền SUDO hoặc tool sẽ tự nhúng sudo.")
     app = AppTool()
     app.mainloop()
-    
