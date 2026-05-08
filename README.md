@@ -81,7 +81,7 @@ Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
 * **Năm thực hiện:** © 2026
 ---
 Hi vọng mọi kiến thức sẽ được bạn học tiếp nhận một cách đơn giản và vui vẻ. 
-Rất mong nhận được sự thảo luận của bạn học khi có thắc mắc hoặc có vấn đề cần chỉnh sửa qua zalo^^
+Rất mong nhận được sự thảo luận của bạn học khi có thắc mắc hoặc có vấn đề cần chỉnh sửa qua tuonglnc.cyber@gmail.com^^
 Cảm ơn vì đã ghé thăm, see ya~~~
 
 🚀 **You are what you do!**
