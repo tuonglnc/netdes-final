@@ -53,15 +53,15 @@ Tham khảo các lệnh test tại [test_commands.md](./test_commands.md)
 > *PHẢI SỬA CHO ĐÚNG VỚI BÀI, DỰA TRÊN topology.py của riêng bạn nhé !*
 
 ### 4. Nhiệm vụ tiếp theo để hoàn thành bài:
-- [ ] Xem lại và tìm hiểu bức tranh tổng thể của bài
-- [ ] Hiểu về: Metro Ethernet MAN, MPLS, MPLS VPN (gồm có L2VPN VÀ L3VPN), VRF, BGP, MP BGP, OSPF,...
-- [ ] Hoàn thành tool.py đo 4 nội dung: Throughput, Delay, Packet loss, Jitter. Cần xuất được bảng, sơ đồ để thống kê (tham khảo [tool.py](./source/tool.py))
+- [x] Xem lại và tìm hiểu bức tranh tổng thể của bài
+- [x] Hiểu về: Metro Ethernet MAN, MPLS, MPLS VPN (gồm có L2VPN VÀ L3VPN), VRF, BGP, MP BGP, OSPF,...
+- [x] Hoàn thành tool.py đo 4 nội dung: Throughput, Delay, Packet loss, Jitter. Cần xuất được bảng, sơ đồ để thống kê (tham khảo [tool.py](./source/tool.py))
     + Kiểm tra Traceroute: Xác nhận gói tin có đi qua các nhãn (labels) MPLS không.
     + Đo Throughput: Sử dụng iperf đo băng thông giữa các chi nhánh.
     + Đo Delay/Jitter/Loss: Sử dụng ping (in kết quả thô) để lấy thông số độ trễ và tỷ lệ mất gói.
     + Stress Test: Tăng tải mạng (bằng iperf) để xem sự thay đổi của độ trễ và mất gói.
     + Tích hợp các chức năng in ra các file ảnh và file .csv như tool đã tham khảo.
-- [ ] Viết báo cáo Latex -- xem kỹ [đề bài](./docs/debai.txt) để thực hiện. Hãy tìm và chọn lọc các lệnh *show, traceroute, iperf,...* để chứng minh đã cấu hình được và screenshot bỏ vào báo cáo tăng độ tin cậy nhé !
+- [x] Viết báo cáo Latex -- xem kỹ [đề bài](./docs/debai.txt) để thực hiện. Hãy tìm và chọn lọc các lệnh *show, traceroute, iperf,...* để chứng minh đã cấu hình được và screenshot bỏ vào báo cáo tăng độ tin cậy nhé !
 
 ### 5. Sản phẩm cuối cùng (đề xuất): Tất cả zip lại đặt tên FINAL_MSSV_HOTEN.zip
 - **/source:** toàn bộ code liên quan, bao gồm: topology.py, config_backbone.py, config_branch1.py, config_branch2.py, config_branch3.py, tool.py, các folders giữ test_results từ tool.py,...
